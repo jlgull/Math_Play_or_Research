@@ -36,42 +36,10 @@ do_again = "Y"
 # Use while, regarding the desire to re-run the program.
 while do_again != "N":
 
-    # Establish base variables.
-    prime_numbers = list()
-    prime_numbers.append(1)
-    prime_numbers.append(2)
-    counter = 0
+    letters = ['a', 'b', 'c', 'd']
+    print(len(letters[1:-1]))
 
-    # Main body of the program.
 
-    clear()
-
-    print(f"\nThis program will find all the prime numbers between the two (2) numbers you enter.")
-
-    lower_limit = get_data("i", "Enter your lower limiting integer now: ")
-    upper_limit = get_data("i", "Enter your upper limiting integer now: ")
-
-    tic = perf_counter()
-
-    if lower_limit < 3:
-        print(2, end=", ")
-        counter = 1
-
-    # Code to actually find the prime numbers and print them out.
-    for outside_loop in range(3, upper_limit+1, 2):
-        for inside_loop in range(3, outside_loop+1, 2):
-            if outside_loop % inside_loop == 0 and inside_loop in prime_numbers:
-                break
-            if outside_loop % inside_loop == 0 and outside_loop not in prime_numbers:
-                prime_numbers.append(outside_loop)
-                if outside_loop >= lower_limit:
-                    print(outside_loop, end=", ")
-                    counter += 1
-
-    toc = perf_counter()
-    print(f"\nRun time is {toc - tic:0.4f} seconds")
-
-    print(f"Between {lower_limit} and {upper_limit} there were {counter} Prime numbers.")
 
     # Ask if the user would like to repeat the program.
     # Also, validate for the correct response.
